@@ -1,0 +1,44 @@
+<html>
+<head>
+<title> Dylevich 2P</title>
+<style>
+h1{
+font-size: 2cm;
+color: red;
+
+}
+</style>
+<script language="JavaScript">
+function WinOpen_Dylevich_g1()
+{
+window.open("","okienko_g1","toolbar=no,directories=no,menubar=no,height=280,width=160,top=00,left=100");
+}
+function WinOpen_Dylevich_g2()
+{
+window.open("","okienko_g2","toolbar=no,directories=no,menubar=no,height=280,width=160,top=350,left=100");
+}
+function WinOpen_Dylevich_g3()
+{
+window.open("","okienko_g3","toolbar=no,directories=no,menubar=no,height=280,width=160,top=00,left=1100");
+}
+function WinOpen_Dylevich_g4()
+{
+window.open("","okienko_g4","toolbar=no,directories=no,menubar=no,height=280,width=160,top=350,left=1100");
+}
+function okno_zamknij_Dylevich()
+{
+window.close()
+}
+</script>
+</head>
+<body>
+<h1>Wykonał: Dmitry Dylevich mój numer w dzienniku 9, czyli mam [(9) mod 4=1] układ 1</h1>
+<form>
+<input type="button" name="grafika1" value="grafika 1" onclick="WinOpen_Dylevich_g1(' ')">
+<input type="button" name="grafika2" value="grafika 2" onclick="WinOpen_Dylevich_g2(' ')">
+<input type="button" name="grafika3" value="grafika 3" onclick="WinOpen_Dylevich_g3(' ')">
+<input type="button" name="grafika4" value="grafika 4" onclick="WinOpen_Dylevich_g4(' ')">
+<input type="button" value="zamknij okno" onclick="okno_zamknij_Dylevich()"/>
+</form>
+</body>
+</html>
