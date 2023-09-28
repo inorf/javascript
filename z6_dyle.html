@@ -9,7 +9,7 @@
  </head>
 <body>
   <h1 style="text-decoration:bold;"> 1) Rodzaje okienek</h1><br>
-  <p>   Okienko alert – wyświetlająca okienko dialogowe z informacją i przyciskiem OK, <br>   Okienko alert – wyświetlająca okienko dialogowe z informacją i przyciskiem OK, <br>   Okienko confirm służy do tego, aby użytkownik coś potwierdził (stąd nazwa confirm)</p><br><br>
+  <p>   Okienko alert – wyświetlająca okienko dialogowe z informacją i przyciskiem OK, <br>   Okienko prompt – generująca okno, w którym użytkownik może wpisać wartość, zwracaną następnie do programu <br>   Okienko confirm służy do tego, aby użytkownik coś potwierdził (stąd nazwa confirm)</p><br><br>
   <h1 style="text-decoration:bold;"> 2) Konwersji liczb.</h1><br>
   <p>   Wczytanie zmiennej z użyciem prompt wykonywane jest jako ciąg znaków dlatego konieczna jest konwersji z ciągu znaków na wartości liczbowe aby wykonywac obliczenia.</p>
   <ul type="circle"><h1>Typy konwersji liczb:</h1>
@@ -17,8 +17,13 @@
    <li>parseInt(zmienna) - konwersja zmiennej do typu int (liczbowego)</li>
    <li>toString(zmienna) - konwersja zmiennej do typu łańcuchowego</li>
   </ul><br><br>
-  <h1 style="text-decoration:bold;"> 3) Przy nadawaniu nazw zmiennym należy przestrzegać pewnych zasad (trzy zasady):</h1><br>
-  <p></p>
+  <h1 style="text-decoration:bold;"> 3) Przy nadawaniu nazw zmiennym należy przestrzegać pewnych zasad:</h1><br>
+  <ul type="circle"><p>(trzy zasady)</p>
+   <li>1.Nazwa zmiennej musi się zaczynać od litery, znaku "$" lub "_", może zawierać tylko litery (bez
+polskich znaków), cyfry oraz "$" i "_".</li>
+   <li>2.Wielkość liter ma znaczenie. Rekord i rekord to dwie różne zmienne! Jest to bardzo częsta przyczyna błędów w kodzie początkujących programistów.</li>
+   <li>3.Należy nie używać słów kluczowych JavaScript jako nazw zmiennych.</li>
+  </ul>
   <input type="button" value="zamknij okno" onclick="okno_zamknij_dylevich()"/>
 </body>
 </html>
