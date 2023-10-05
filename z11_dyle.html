@@ -13,7 +13,8 @@
  var rgb;
  if(D1<D2 || 1>D1 || D2>31){
  document.write("wystapil  blad");
- }else{
+ }
+ if(D1>D2 || 1<=D1 || D2<=31){
  rgb=D1-D2;
  rgb=rgb*24*60*60;
  document.write(rgb+" - ilosc sekund");}
