@@ -1,1 +1,32 @@
-
+<html>
+<head>
+<meta chaset="utf-8">
+<title>Dylevich 2P</title>
+<head>
+<body>
+<div style="color:navy;font-size:100%;">
+<script language="JavaScript">
+var D1_dyl=prompt("podaj a=","");
+var D2_dyl=prompt("podaj b=","");
+var a=parseFloat(D1_dyl);
+var b=parseFloat(D2_dyl);
+var c;
+var d;
+var e;
+var f;
+var g;
+c=a*a*a;
+d=3*a*a*b;
+e=3*a*b*b;
+f=b*b*b;
+g=c+d+e+f;
+document.write("("+a+" + "+b+")^3= "+a+"^3 + 3*(("+a+")^2)*("+b+") + 3*("+a+")*(("+b+")^2) + "+b+"^3 = "+c+" + "+d+" + "+e+" + "+f+" = "+g);
+function okno_zamknij_dyle()
+{
+window.close()
+}
+</script>
+</div>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
+</body>
+</html>
