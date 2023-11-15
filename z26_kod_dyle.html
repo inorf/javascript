@@ -1,1 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            textarea{
+                width: 800px;
+                height:700px;
+            }
+        </style>
+    </head>
+    <body>
+        HTML <br>
+          <textarea>
+            <html>
+<head>
+</head>
+<body>
+<div style="color:navy;font-size:100%;">
+    <script language="JavaScript">
+        function Pole_dyle() {
+            var c = parseFloat(document.getElementById('wd').value);
+            var d = parseFloat(document.getElementById('wx').value);
+            var h = parseFloat(document.getElementById('wb').value);
+            var Pow_dyle = ((c + d) * h) / 2;
+            document.getElementById('pole').value = Pow_dyle.toFixed(2);
+        }
 
+        function Obwod_dyle() {
+            var c = parseFloat(document.getElementById('wd').value);
+            var d = parseFloat(document.getElementById('wx').value);
+            var h = parseFloat(document.getElementById('wb').value);
+            var f = (d-c)/2;
+	    var j = Math.sqrt(f*f+h*h);
+            var Obw_dyle = c+d+j+j;
+            document.getElementById('obw').value = Obw_dyle.toFixed(2);
+        }
+
+        function okno_zamknij_dyle() {
+            window.close();
+        }
+    </script>
+    Podaj a (musi byc < niz b) - <input size="5" id="wd"><br>
+    Podaj b - <input size="5" id="wx"><br>
+    Podaj h - <input size="5" id="wb"><br>
+    <input type="submit" value="oblicz Stala i N" onclick="Pole_dyle(); Obwod_dyle()"><br>
+    obwod - <input size="5" id="obw">
+    pole - <input size="5" id="pole">
+</div><br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
+</body>
+</html>
+            </textarea>
+        </body>
+    </html>
