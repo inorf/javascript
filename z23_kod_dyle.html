@@ -1,1 +1,53 @@
-
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            textarea{
+                width: 800px;
+                height:700px;
+            }
+        </style>
+    </head>
+    <body>
+        HTML <br>
+          <textarea>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dylevich 2P</title>
+</head>
+<body>
+<div style="color:navy;font-size:100%;">
+<script language="JavaScript">
+function okno_zamknij_dyle() {
+    window.close();
+}
+function Drabina_dyl() {
+    var c = parseFloat(document.getElementById('wd').value);
+    var d = parseFloat(document.getElementById('wx').value);
+    var Drabina_d = Math.sqrt((c*c) + (d*d));
+    document.getElementById("drab").value = Drabina_d.toFixed(2);
+}
+function Alfa_dyl() {
+    var c = parseFloat(document.getElementById('wd').value);
+    var d = parseFloat(document.getElementById('wx').value);
+    var sinAlfa = c / Math.sqrt((c*c) + (d*d));
+    var alfaRad = Math.asin(sinAlfa);
+    var alfaDeg = alfaRad * (180 / Math.PI);
+    var Alfa_d = alfaDeg;
+    document.getElementById("alfa").value = Alfa_d.toFixed(2);
+}
+</script>
+Podaj d - <input size="5" id="wd">
+Podaj x - <input size="5" id="wx"><br>
+<input type="submit" value="oblicz drabina" onclick="Drabina_dyl()">
+<input type="submit" value="oblicz alfa" onclick="Alfa_dyl()"><br>
+drabina w 'm'- <input size="5" id="drab">
+alfa - <input size="5" id="alfa">
+</div>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()">
+</body>
+</html>
+            </textarea>
+        </body>
+    </html>
