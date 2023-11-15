@@ -1,1 +1,53 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            textarea{
+                width: 800px;
+                height:700px;
+            }
+        </style>
+    </head>
+    <body>
+        HTML <br>
+          <textarea>
+<html>
+<head>
+</head>
+<body>
+<div style="color:navy;font-size:100%;">
+    <script language="JavaScript">
+        function Stala() {
+            var no = parseFloat(document.getElementById('wd').value);
+            var t = parseFloat(document.getElementById('wx').value);
+            var okr = parseFloat(document.getElementById('wb').value);
+            var st = Math.LN2 / okr;
+            document.getElementById('stala').value = st.toFixed(10);
+            return st;
+        }
 
+        function No() {
+            var no = parseFloat(document.getElementById('wd').value);
+            var t = parseFloat(document.getElementById('wx').value);
+            var stak = Stala();
+            var nr = no * Math.pow(Math.E, -1 * stak * t);
+            document.getElementById('n').value = nr.toFixed(10);
+        }
+function okno_zamknij_dyle()
+{
+window.close()
+}
+    </script>
+    Podaj No - <input size="5" id="wd"><br>
+    Podaj t - <input size="5" id="wx"><br>
+    Podaj T1/2 - <input size="5" id="wb"><br>
+    <input type="submit" value="oblicz Stala i N" onclick="Stala(); No()"><br>
+    Stala - <input size="5" id="stala">
+    N - <input size="5" id="n">
+</div><br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
+</body>
+</html>
+            </textarea>
+        </body>
+    </html>
