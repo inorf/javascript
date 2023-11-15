@@ -10,14 +10,14 @@
 {
 window.close()
 }
-  function Pole_dylevich(a_dyle,b_dyle)
+  function Pole_dylevich()
 {
-c_dyle=parseFloat(a_dyle)
-d_dyle=parseFloat(b_dyle)
+c_dyle=parseFloat(document.getElementById('a').value)
+d_dyle=parseFloat(document.getElementById('b').value)
 Pole_dyle=c_dyle*d_dyle
 document.getElementsByName('pole')[0].value=Pole_dyle.toFixed(2);
 }
-function Obwod_dylevich(a_dyle,b_dyle)
+function Obwod_dylevich()
 {
 c_dyle=parseFloat(a_dyle)
 d_dyle=parseFloat(b_dyle)
@@ -25,8 +25,8 @@ Obwod_dyle=c_dyle+d_dyle+c_dyle+d_dyle;
 document.getElementsByName('obw')[0].value=Obwod_dyle.toFixed(2);
 }
 </script>
-  Podaj a - <input size="5" name="a_dyle" id="view1">
-  Podaj b - <input size="5" name="b_dyle" id="view2"><br>
+  Podaj a - <input size="5" name="a_dyle" id="a">
+  Podaj b - <input size="5" name="b_dyle" id="b"><br>
   <input type="submit" value="oblicz pole i obwod" >
 </div>
   <div style="color:red;font-size:50px;"id="pole"></div>
