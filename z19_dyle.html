@@ -1,17 +1,27 @@
 <html>
 <head>
-<meta chaset="utf-8">
-<title>Dylevich 2P</title>
-<head>
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="styl.css">
+</head>
 <body>
-<div style="color:navy;font-size:100%;">
-<script language="JavaScript">
-  function okno_zamknij_dyle()
-{
-window.close()
-}
+<script type="text/javascript">
+ function pole()
+ {
+var a_dyl= parseFloat(document.getElementById('dlugosc').value);
+var b_dyl= a_dyl*a_dyl;
+ document.getElementById("nazwa").innerHTML ="Pole kwadratu= "+b_dyl.toFixed(2)+" cm^2"; 
+ }
+ function obwod()
+ {
+var a_dyl= parseFloat(document.getElementById('dlugosc').value);
+var b_dyl= 4*a_dyl;
+ document.getElementById("nazwa").innerHTML ="Obwód kwadratu= "+b_dyl.toFixed(2)+" cm"; 
+ }
 </script>
-</div>
-<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
+ <h1>Wszystko o KWADRACIE</h1><br><br>
+ Podaj długość boku: <input type="text" id="dlugosc" value="podaj długość"> cm<br><br><br>
+ <input type="button" name="pole" value="Oblicz pole" Onclick="pole()"><br><br>
+ <input type="button" name="obwod" value="Oblicz obwod" Onclick="obwod()"><br><br>
+ <div style="color:red;font-size:50px;"id="nazwa"></div>
 </body>
 </html>
