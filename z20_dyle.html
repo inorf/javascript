@@ -10,7 +10,43 @@
 {
 window.close()
 }
+  function AB_dyle()
+     {
+     var xa= parseFloat(document.getElementById('xa').value);
+     var ya= parseFloat(document.getElementById('ya').value);
+     var xb= parseFloat(document.getElementById('xb').value);
+     var yb= parseFloat(document.getElementById('yb').value);
+     var ab= Math.sqrt(Math.pow(xa-xb,2)+Math.pow(ya-yb,2));
+     document.getElementById("nazwa").innerHTML ="Bok AB - "+ab.toFixed(2)+" cm";
+     }
+     function BC_dyle()
+     {
+    var xb= parseFloat(document.getElementById('xb').value);
+    var yb= parseFloat(document.getElementById('yb').value);
+    var xc= parseFloat(document.getElementById('xc').value);
+    var yc= parseFloat(document.getElementById('yc').value);
+    var bc= Math.sqrt(Math.pow(xb-xc,2)+Math.pow(yb-yc,2));
+     document.getElementById("nazwa").innerHTML ="Bok BC  "+bc.toFixed(2)+" cm";
+     }
+     function CA_dyle()
+     {
+    var xa= parseFloat(document.getElementById('xa').value);
+    var ya= parseFloat(document.getElementById('ya').value);
+    var xc= parseFloat(document.getElementById('xc').value);
+    var yc= parseFloat(document.getElementById('yc').value);
+    var ca= Math.sqrt(Math.pow(xc-xa,2)+Math.pow(yc-ya,2));
+     document.getElementById("nazwa").innerHTML ="Bok CA - "+ca.toFixed(2)+" cm";
+     }
 </script>
+     Podaj x i y punktu a - <input type="text" id="xa" value="podaj punkt">
+     <input type="text" id="ya" value="podaj punkt"><br>
+     Podaj x i y punktu b - <input type="text" id="xb" value="podaj punkt">
+     <input type="text" id="yb" value="podaj punkt"><br>
+     Podaj x i y punktu c - <input type="text" id="xc" value="podaj punkt">
+     <input type="text" id="yc" value="podaj punkt"><br><br>
+     <input type="button" name="bok" value="Oblicz AB" Onclick="AB_dyle()"><br>
+     <input type="button" name="bok" value="Oblicz BC" Onclick="BC_dyle()"><br>
+     <input type="button" name="bok" value="Oblicz CA" Onclick="CA_dyle()"><br><br>
 </div>
 <input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
 </body>
