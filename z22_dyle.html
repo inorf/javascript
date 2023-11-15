@@ -1,36 +1,33 @@
 <html>
 <head>
-<meta chaset="utf-8">
+<meta charset="utf-8">
 <title>Dylevich 2P</title>
-<head>
+</head>
 <body>
 <div style="color:navy;font-size:100%;">
 <script language="JavaScript">
-  function okno_zamknij_dyle()
-{
-window.close()
+function okno_zamknij_dyle() {
+    window.close();
 }
-  function Pole_dylevich()
-{
-c_dyle=parseFloat(document.getElementById('a').value)
-d_dyle=parseFloat(document.getElementById('b').value)
-Pole_dyle=c_dyle*d_dyle
-document.getElementsByName('pole')[0].value=Pole_dyle.toFixed(2);
+function Pole_dylevich() {
+    var c_dyle = parseFloat(document.getElementById('a').value);
+    var d_dyle = parseFloat(document.getElementById('b').value);
+    var Pole_dyle = c_dyle * d_dyle;
+    document.getElementById('pole').innerHTML = Pole_dyle.toFixed(2);
 }
-function Obwod_dylevich()
-{
-c_dyle=parseFloat(a_dyle)
-d_dyle=parseFloat(b_dyle)
-Obwod_dyle=c_dyle+d_dyle+c_dyle+d_dyle;
-document.getElementsByName('obw')[0].value=Obwod_dyle.toFixed(2);
+function Obwod_dylevich() {
+    var c_dyle = parseFloat(document.getElementById('a').value);
+    var d_dyle = parseFloat(document.getElementById('b').value);
+    var Obwod_dyle = c_dyle + d_dyle + c_dyle + d_dyle;
+    document.getElementById('obw').innerHTML = Obwod_dyle.toFixed(2);
 }
 </script>
-  Podaj a - <input size="5" name="a_dyle" id="a">
-  Podaj b - <input size="5" name="b_dyle" id="b"><br>
-  <input type="submit" value="oblicz pole i obwod" >
+Podaj a - <input size="5" name="a_dyle" id="a">
+Podaj b - <input size="5" name="b_dyle" id="b"><br>
+<input type="submit" value="oblicz pole i obwod" onclick="Pole_dylevich(); Obwod_dylevich();">
 </div>
-  <div style="color:red;font-size:50px;"id="pole"></div>
-  <div style="color:red;font-size:50px;"id="obw"></div><br>
-<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
+<div style="color:red;font-size:50px;" id="pole"></div>
+<div style="color:red;font-size:50px;" id="obw"></div><br>
+<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()">
 </body>
 </html>
