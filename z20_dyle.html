@@ -16,11 +16,15 @@ window.close()
      var ya= parseFloat(document.getElementById('ya').value);
      var xb= parseFloat(document.getElementById('xb').value);
      var yb= parseFloat(document.getElementById('yb').value);
+     var xc= parseFloat(document.getElementById('xc').value);
+     var yc= parseFloat(document.getElementById('yc').value);
      var ab= Math.sqrt(Math.pow(xa-xb,2)+Math.pow(ya-yb,2));
      document.getElementById("nazwa").innerHTML ="Bok AB - "+ab.toFixed(2)+" cm";
      }
      function BC_dyle()
      {
+    var xa= parseFloat(document.getElementById('xa').value);
+    var ya= parseFloat(document.getElementById('ya').value);
     var xb= parseFloat(document.getElementById('xb').value);
     var yb= parseFloat(document.getElementById('yb').value);
     var xc= parseFloat(document.getElementById('xc').value);
@@ -32,6 +36,8 @@ window.close()
      {
     var xa= parseFloat(document.getElementById('xa').value);
     var ya= parseFloat(document.getElementById('ya').value);
+    var xb= parseFloat(document.getElementById('xb').value);
+    var yb= parseFloat(document.getElementById('yb').value);
     var xc= parseFloat(document.getElementById('xc').value);
     var yc= parseFloat(document.getElementById('yc').value);
     var ca= Math.sqrt(Math.pow(xc-xa,2)+Math.pow(yc-ya,2));
@@ -47,6 +53,7 @@ window.close()
      <input type="button" name="bok" value="Oblicz AB" Onclick="AB_dyle()"><br>
      <input type="button" name="bok" value="Oblicz BC" Onclick="BC_dyle()"><br>
      <input type="button" name="bok" value="Oblicz CA" Onclick="CA_dyle()"><br><br>
+     <h1 id="nazwa" style="color:red;"></h1><br><br>
 </div>
 <input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
 </body>
