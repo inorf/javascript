@@ -16,8 +16,6 @@ c_dyle=parseFloat(a_dyle)
 d_dyle=parseFloat(b_dyle)
 Pole_dyle=c_dyle*d_dyle
 document.getElementsByName('pole')[0].value=Pole_dyle.toFixed(2);
-alert("Pole - "+Pole_dyle.toFixed(2)+"cm2");
-view1.innerHTML="Pole - "+Pole_dyle.toFixed(2)+"cm2"+"<br>";
 }
 function Obwod_dylevich(a_dyle,b_dyle)
 {
@@ -25,16 +23,14 @@ c_dyle=parseFloat(a_dyle)
 d_dyle=parseFloat(b_dyle)
 Obwod_dyle=c_dyle+d_dyle+c_dyle+d_dyle;
 document.getElementsByName('obw')[0].value=Obwod_dyle.toFixed(2);
-alert("Obwod - "+Obwod_dyle.toFixed(2)+"cm");
-view2.innerHTML="Obwod - "+Obwod_dyle.toFixed(2)+"cm"+"<br>";
 }
 </script>
   Podaj a - <input size="5" name="a_dyle" id="view1">
   Podaj b - <input size="5" name="b_dyle" id="view2"><br>
-  <input type="submit" value="oblicz pole i obwod" ><br>
-  Pole - <input size="5" name="pole">
-  Obwod - <input size="5" name="obw">
+  <input type="submit" value="oblicz pole i obwod" >
 </div>
+  <div style="color:red;font-size:50px;"id="pole"></div>
+  <div style="color:red;font-size:50px;"id="obw"></div><br>
 <input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
 </body>
 </html>
