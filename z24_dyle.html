@@ -1,17 +1,43 @@
-<html>
+<htm<html>
 <head>
-<meta chaset="utf-8">
-<title>Dylevich 2P</title>
-<head>
+</head>
 <body>
 <div style="color:navy;font-size:100%;">
-<script language="JavaScript">
-  function okno_zamknij_dyle()
-{
-window.close()
-}
-</script>
+    <script language="JavaScript">
+        function Y1() {
+            var c = parseFloat(document.getElementById('wd').value);
+            var d = parseFloat(document.getElementById('wd').value);
+            var Y1_result = 3 * Math.pow(c, 7 / 9);
+            document.getElementById('y1').value = Y1_result.toFixed(2);
+        }
+
+        function Y2() {
+            var c = parseFloat(document.getElementById('wd').value);
+            var d = parseFloat(document.getElementById('wd').value);
+            var ii = (c * Math.PI) / 180;
+            var cos = Math.cos(ii);
+            var sin = Math.sin(ii);
+            var Y2_result = 2 * cos + 3 * sin;
+            document.getElementById('y2').value = Y2_result.toFixed(2);
+        }
+
+        function Y3() {
+            var x1 = parseFloat(document.getElementById('wd').value);
+            var x2 = parseFloat(document.getElementById('wx').value);
+            var f = Math.pow(x1, 5);
+            var e = 2 * Math.pow(x2, 4);
+            var Y3_result = Math.pow(f + e * Math.abs(x1 - x2), 1 / 3);
+            document.getElementById('y3').value = Y3_result.toFixed(2);
+        }
+    </script>
+    Podaj d - <input size="5" id="wd">
+    Podaj x - <input size="5" id="wx"><br>
+    <input type="submit" value="oblicz y1" onclick="Y1()"><br>
+    <input type="submit" value="oblicz y2" onclick="Y2()"><br>
+    <input type="submit" value="oblicz y3" onclick="Y3()"><br>
+    y1 - <input size="5" id="y1">
+    y2 - <input size="5" id="y2">
+    y3 - <input size="5" id="y3">
 </div>
-<input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
 </body>
 </html>
