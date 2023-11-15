@@ -10,17 +10,17 @@
 {
 window.close()
 }
-  function Drabina_dyl(d,x)
+  function Drabina_dyl()
 {
-c=parseFloat(d)
-d=parseFloat(x)
+c=parseFloat(document.getElementById('wd').value)
+d=parseFloat(document.getElementById('wx').value)
 Drabina_d=Math.sqrt((c*c)+(d*d))
 document.getElementsByName('drab')[0].value=Drabina_d.toFixed(2);
 }
-function Alfa_dyl(d,x)
+function Alfa_dyl()
 {
-c=parseFloat(d)
-d=parseFloat(x)
+c=parseFloat(document.getElementById('wd').value)
+d=parseFloat(document.getElementById('wx').value)
 var sinAlfa = c/Math.sqrt((c*c)+(d*d));
 var alfaRad = Math.asin(sinAlfa);
 var alfaDeg = alfaRad * (180 / Math.PI);
@@ -28,8 +28,8 @@ Alfa_d=alfaDeg;
 document.getElementsByName('alfa')[0].value=Alfa_d.toFixed(2);
 }
 </script>
-  Podaj d - <input size="5" name="d">
-  Podaj x - <input size="5" name="x"><br>
+  Podaj d - <input size="5" id="wd">
+  Podaj x - <input size="5" id="wx"><br>
 </div>
   <div style="color:red;font-size:50px;"id="drab"></div>
   <div style="color:red;font-size:50px;"id="alfa"></div><br>
