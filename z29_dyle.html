@@ -16,12 +16,32 @@ window.close()
   <li>używając zapisu postaci: nazwa_obiektu[nazwa_właściwości];</li>
 </ol><br>
   
-  <ol><h1 style="text-decoration:bold;">1. W jaki sposób można odwołać się do pól (właściwości) i metod? (odpowiedź poniżej)</h1>
+  <ol><h1 style="text-decoration:bold;">2. W jaki sposób można odwołać się do pól (właściwości) i metod? (odpowiedź poniżej)</h1>
 <li>console.log(samochod1.kolor);  wyświetla kolor obiektu samochod</li>
   <li>Do właściwości i metod można się odwołać podobnie jak do zwykłych zmiennych i funkcji, trzeba tylko przed ich nazwą umieścić nazwę obiektu, którego są elementami, i kropkę.</li>
 </ol><br>
 
-  
+  <ol><h1 style="text-decoration:bold;">3. Wymień cechy charakterystyczne konstruktora. (odpowiedź poniżej)</h1>
+<li>jest wywoływany (uruchamiany) automatycznie w chwili tworzenia obiektu danej klasy - na rzecz tego obiektu,</li>
+  <li>nazywa się tak samo jak klasa,</li>
+    <li>nie zwraca żadnej wartości ,</li>\
+    <li>może przyjmować argumenty - tak jak zwykła funkcja czy metoda, aby następnie powołać do życia obiekt za pomocą operatora new.</li>
+</ol><br>
+
+   <ol><h1 style="text-decoration:bold;">4. Konstruowanie obiektu na podstawie przykładu -> obiekt ma trzy pola oraz jedną metodę.</h1>
+<li><textarea style="width:300px;height:300px;">var osoba_1 =
+{
+nazwisko : ‘Kowalski’,
+imie :’Jan’,
+zawod :’piekarz’,
+wyświetl :function ()
+{
+Document.write(this.nazwisko + ‘ ‘ + this.imie)
+}
+}</textarea></li>
+  <li>Słowo kluczowe this  pozwala odwołać się do pola lub metody obiektu z wnętrza tego obiektu.</li>
+     <li>Metody i pola muszą być odzielne przecinkami w obrębie jednego obiektu.</li>
+</ol><br>
 </div>
 <input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
 </body>
