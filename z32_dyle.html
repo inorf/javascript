@@ -1,0 +1,29 @@
+<html>
+ <head>
+ <script type="text/javascript">
+ function komputer(proizwoditel_k,model_k,cena_k)
+{
+this.proizwoditel= proizwoditel_k;
+this.model= model_k;
+this.cena= cena_k;
+}
+ komputer.prototype.wypisz = function () 
+ {
+ alert(this.proizwoditel + ' ' + this.model+ ' ' + this.cena);
+ };
+var komputer1 = new komputer("ACER", "Predator", "3699.99"); 
+var komputer2 = new komputer('HIRO', 'HIRO', '23699');
+komputer1.wypisz(); 
+komputer2.wypisz();
+ document.write("dostęp do właściwości"+"<br>");
+ document.write("komputer pierwszy -"+" "+komputer1.proizwoditel+" "+komputer1.model+" "+komputer1.cena);
+ document.write("komputer drugi -"+" "+komputer2.proizwoditel+" "+komputer2.model+" "+komputer2.cena);
+ </script>
+ </head>
+ <body>
+  <br>
+  <a href="https://sklep.ntt.pl/komputery-do-gier/1292-komputer-gamingowy-hiro-engine-i9-12900k-rtx-4090-24gb-32gb-ram-1tb-ssd-m2-windows-11-5900626927666.html?gclid=CjwKCAiA1MCrBhAoEiwAC2d64RZmeR4HcsmQC6n9mvUkopqbdop1yAgq5lKDGFFiEIPufR7jFbtzoBoCiXYQAvD_BwE">link do komputera HIRO</a>
+  <br><a href="https://www.mediaexpert.pl/komputery-i-tablety/komputery-pc/komputery-stacjonarne/komputer-acer-predator-orion-3000-po3-640-i5-12400f-16gb-ram-512gb-ssd-geforce-gtx1660-super-windows-11-home-1?gad_source=4&gclid=CjwKCAiA1MCrBhAoEiwAC2d64Tfka7B69cu_Op9OHVDuY7PWuBE17koQeBlcXDp0Wk5VD6rq7KDrtxoCEA0QAvD_BwE">link do komputera ACER</a>
+  <input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
+ </body>
+</html>
