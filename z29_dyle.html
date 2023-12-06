@@ -73,8 +73,33 @@ kluczowe this odnosi się do aktualnego obiektu i pozwala na przypisanie wartoś
 odpowiedniego pola tego obiektu.</li>
 </ol><br>
 
+<ol><h1 style="text-decoration:bold;">7. Znaczenie słowa kluczowego New wraz z przykładem.</h1>
+<li>Do utworzenia nowego obiektu na podstawie konstruktora stosowane jest słowo kluczowe new.</li>
+  <li>var osoba1 = new klient('Kowalski', 'Jan', 'kierowca');<br>
+var osoba2 = new klient('Nowak', 'Anna', 'sekretarka')</li>
+</ol><br>
+
+<ol><h1 style="text-decoration:bold;">8. Znaczenie słowa kluczowego prototype wraz z przykładem i opisem ( szczególnie ważny tekst pogrubiony)</h1>
+<li>Do definowania metod i właściwości dla obiektu jest wykorzystana właściwości prototype.</li>
+  <li><textarea style="width:300px;height:300px;">var osoba_1 =
+function klient()
+{
+this.nazwisko='Bielski';
+this.imie='Paweł';
+}
+klient.prototype.pisz_dane = function ()
+ {
+ document.write(this.nazwisko + ' ' + this.imie)
+ }
+klient.prototype.zawod = 'kierowca';
+var osoba1 = new klient();
+osoba1.pisz_dane()
+</textarea></li>
+</ol><br>
+  
 
 
+  
 
   
 </div>
