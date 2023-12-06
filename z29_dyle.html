@@ -47,6 +47,36 @@ Document.write(this.nazwisko + ‘ ‘ + this.imie)
 <li>Używając zapisu postaci: nazwa_obiektu.nazwa_właściwości="tekst";</li>
   <li>używając zapisu postaci: nazwa_obiektu[nazwa_właściwości];</li>
 </ol><br>
+
+  <ol><h1 style="text-decoration:bold;">6. Konstruktor w JS na podstawie przykładu wraz z opisem. Cechy charakterystyczne konstruktora:</h1>
+<li>jest wywoływany (uruchamiany) automatycznie w chwili tworzenia obiektu danej klasy - na 
+rzecz tego obiektu,</li>
+  <li>nazywa się tak samo jak klasa,</li>
+    <li>nie zwraca żadnej wartości,</li>
+    <li>może przyjmować argumenty - tak jak zwykła funkcja czy metoda, aby następnie powołać do 
+życia obiekt za pomocą operatora new. </li><br>
+    <li><textarea style="width:300px;height:300px;">var osoba_1 =
+function klient(nazwisko_k,imie_k,zawod_k)
+{
+this.nazwisko=nazwisko_k;
+this.imie=imie_k;
+this.zawod=zawod_k;
+wypisz = function ()
+ {
+ alert(this.nazwisko + ' ' + this.imie)
+ }
+}
+</textarea></li>
+    <li>Zostanie utworzony konstruktor o nazwie klient z właściwościami nazwisko, imie, zawod oraz 
+metodą wypisz(). Właściwościom obiektu zostały przypisane wartości parametrów. Użyte słowo 
+kluczowe this odnosi się do aktualnego obiektu i pozwala na przypisanie wartości parametru do 
+odpowiedniego pola tego obiektu.</li>
+</ol><br>
+
+
+
+
+  
 </div>
 <input type="button" value="zamknij okno" onclick="okno_zamknij_dyle()"/>
 </body>
