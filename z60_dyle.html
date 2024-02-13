@@ -6,16 +6,19 @@
 </head>
 <body>
  <script>
- var suma_dyl=0;
- var T_dyl = new Array()
- for (i = 0; i < 20; i++) {
- T_dyl[i] = i;
- suma_dyl=suma_dyl+i;
- document.write("T["+i+"]="+T_dyl[i]+"<br>");
+ let alarm_dyl = prompt("podaj liczbe, do ktorej odczytac","")
+ if(alarm_dyl > 0) {
+  let suma_dyl=0;
+  let T_dyl = new Array()
+  for (i = 0; i <= alarm_dyl; i++) {
+  T_dyl[i] = i;
+  suma_dyl=suma_dyl+i;
+  document.write("T["+i+"]="+T_dyl[i]+"<br>");
+  }
+  let srednia_dyl=suma_dyl/i;
+  document.write("suma="+suma_dyl+"<br>");
+  document.write("średnia="+srednia_dyl.toFixed(2)+"<br>");
  }
- var srednia_dyl=suma_dyl/i;
- document.write("suma="+suma_dyl+"<br>");
- document.write("średnia="+srednia_dyl.toFixed(2)+"<br>");
  </script>
 </body>
 </html>
