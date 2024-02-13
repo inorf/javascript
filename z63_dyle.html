@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Tabele zadanie 4</title>
+</head>
+<body>
+ <script>
+ document.write("<strong>" + "first array:" + "</strong>" + "<br>");
+ let TaB_dyl = new Array('Porsche', 'Honda', 'Toyota', 'Mercedes-Benz', 'Nissan', 'Lamborghini', 'BMW');
+ for (i = 0; i<TaB_dyl.length; i++)
+ {
+ document.write(TaB_dyl[i] + "<br>");
+ }
+ document.write("<br>" + "<strong>" + "po dodawaniu kolejnego elementu: " + "</strong>" + "<br>");
+ TaB_dyl.push("Opel");
+ for (i = 0; i<TaB_dyl.length; i++)
+ {
+ document.write(TaB_dyl[i] + "<br>");
+ }
+   document.write("<br>" + "<strong>" + "po usunieciu pierwszego elementu: " + "</strong>" + "<br>");
+ TaB_dyl.shift();
+ for (i = 0; i<TaB_dyl.length; i++)
+ {
+ document.write(TaB_dyl[i] + "<br>");
+ }
+ </script>
+</body>
+</html>
