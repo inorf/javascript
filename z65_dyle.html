@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Tabele zadanie 4</title>
+</head>
+<body>
+ <script>
+ function porownaj(a,b)
+{
+return a-b
+}
+var Tablica = new Array(27, 100, 'b', 'c', 10, 450, 1654, 320, 'a');
+document.write('Bez sortowania: ' + Tablica.join() + '<br>');
+Tablica.sort();
+document.write('Sortowanie poprawne: ');
+Tablica.sort(porownaj);
+document.write(Tablica.join() );
+ </script>
+</body>
+</html>
