@@ -1,36 +1,30 @@
-﻿<html>
+https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8">
+ <title>Tabele zadanie 4</title>
+</head>
 <body>
-    <div id="imageContainer"></div>
-
-    <script>
-        const imageArray = [
-            ['g1.jpg', 'g2.jpg', 'g3.jpg'],
-            ['g2.jpg', 'g1.jpg', 'g3.jpg'],
-            ['g1.jpg', 'g3.jpg', 'g2.jpg'],
-        ];
-
-        const container = document.getElementById('imageContainer');
-        let currentRow = 0;
-        let currentCol = 0;
-
-        function showNextImage() {
-            const imageUrl = imageArray[currentRow][currentCol];
-            const imageElement = document.createElement('img');
-            imageElement.src = imageUrl;
-            imageElement.className = 'image';
-
-            container.innerHTML = '';
-            container.appendChild(imageElement);
-
-            currentCol = (currentCol + 1) % imageArray[currentRow].length;
-            if (currentCol === 0) {
-                currentRow = (currentRow + 1) % imageArray.length;
-            }
-
-            setTimeout(showNextImage, 2000);
-        }
-
-        showNextImage();
-    </script>
+ <div id='ia'>
+ <script>
+  let mediaArray = ['NAcsWI5.png', 'https://imgur.com/t/cosplay/E6rL1ut', 'https://imgur.com/gallery/HQZbfXZ', 'NAcsWI5.png', 'https://imgur.com/t/cosplay/E6rL1ut', 'https://imgur.com/gallery/HQZbfXZ', 'NAcsWI5.png', 'https://imgur.com/t/cosplay/E6rL1ut', 'https://imgur.com/gallery/HQZbfXZ'];
+  let container = document.getElementById('ia');
+  let mediaElement = document.createElement('img');
+  let IntId;
+  function startTime(){
+	  if (!IntId) {
+		IntId = setInterval(flashText, 1000);
+  }
+  for(let i = 0; i < 9; i=i+1){
+      container.innerHTML = '';
+	  mediaElement.src = mediaArray[i];
+	  container.appendChild(mediaElement);
+	  if(i == 8){ i = 0;}
+	  document.addEventListener(, );
+  }
+ </script>
+ </div>
 </body>
 </html>
