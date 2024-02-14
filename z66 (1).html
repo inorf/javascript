@@ -1,0 +1,36 @@
+﻿<html>
+<body>
+    <div id="imageContainer"></div>
+
+    <script>
+        const imageArray = [
+            ['g1.jpg', 'g2.jpg', 'g3.jpg'],
+            ['g2.jpg', 'g1.jpg', 'g3.jpg'],
+            ['g1.jpg', 'g3.jpg', 'g2.jpg'],
+        ];
+
+        const container = document.getElementById('imageContainer');
+        let currentRow = 0;
+        let currentCol = 0;
+
+        function showNextImage() {
+            const imageUrl = imageArray[currentRow][currentCol];
+            const imageElement = document.createElement('img');
+            imageElement.src = imageUrl;
+            imageElement.className = 'image';
+
+            container.innerHTML = '';
+            container.appendChild(imageElement);
+
+            currentCol = (currentCol + 1) % imageArray[currentRow].length;
+            if (currentCol === 0) {
+                currentRow = (currentRow + 1) % imageArray.length;
+            }
+
+            setTimeout(showNextImage, 2000);
+        }
+
+        showNextImage();
+    </script>
+</body>
+</html>
