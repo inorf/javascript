@@ -1,0 +1,20 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="pl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>Moja strona WWW</title>
+</head>
+<body>
+    <script type="text/javascript">
+ var agent = navigator.userAgent.toLowerCase();
+ var nazwa = "nieznany";
+ if(agent.indexOf('firefox') != -1){nazwa = "Firefox";}
+ if(agent.indexOf('opera') != -1){nazwa = "Opera";}
+ else if(agent.indexOf('konqueror') != -1){nazwa = "Konqueror";}
+ else if(agent.indexOf('netscape') != -1){nazwa = "Netscape Navigator";}
+ else if(agent.indexOf('msie') != -1){nazwa = "Internet Explorer";}
+ document.write("Twoja przeglądarka to: " + nazwa);
+    </script>
+</body>
+</html>
