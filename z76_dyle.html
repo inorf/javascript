@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <ul><h1>TEORIA</h1>
+            <li>
+                <p>
+                    protocol -> to łańcuch znakowy określający protokół, zgodnie z którym należy nawiązać łączność z podanym serwerem (np. http:, ftp:, file:),
+                </p>
+            </li>
+            <li>
+                <p>
+                    host -> to łańcuch znakowy określający nazwę serwera z bieżącego adresu, portto łańcuch znakowy odpowiadający portowi, przez który należy połączyć się z serwerem, 
+                </p>
+            </li>
+            <li>
+                <p>
+                    pathname -> to łańcuch znakowy określający ścieżkę dostępu do dokumentu na serwerze, 
+                </p>
+            </li>
+            <li>
+                <p>
+                    hash -> to łańcuch znakowy odpowiadający nazwie zakotwiczenia (przypisanie tu jakiejś wartości spowoduje przewinięcie dokumentu do wskazanego punktu), 
+                </p>
+            </li>
+            <li>
+                <p>
+                    serach -> to człon lokalizatora URL.
+                </p>
+            </li>
+        </ul>
+        <ul><h1>METODY</h1>
+            <li type="circle">
+                <p>
+                    Metoda assign<br>
+                    Wywołanie: location.assign(url)<br>
+                    Metoda assign wczytuje dokument o adresie wskazanym przez argument url.                
+                </p>
+            </li>
+            <li type="circle">
+                <p>
+                    Metoda reload<br>
+                    Wywołanie: location.reload(force)<br>
+                    Metoda reload wymusza ponowne wczytanie bieżącej strony. Jeśli obecny jest argument force i ma <br>
+                    on wartość true, wymusza to ponowne wczytanie zawartości witryny z serwera. W pozostałych <br>
+                    przypadkach przeglądarka może wczytać ją z pamięci cache                
+                </p>
+            </li>
+            <li type="circle">
+                <p>
+                    Metoda replace<br>
+                    Wywołanie: location.replace(url)<br>
+                    Metoda replace zastępuje bieżący dokument przez wczytany spod adresu wskazanego przez <br>
+                    argument url.                
+                </p>
+            </li>
+            <li type="circle">
+                <p>
+                    Metoda toString<br>
+                    Wywołanie: location.toString()<br>
+                    Metoda toString przekształca zawartość obiektu location w ciąg znaków reprezentujący <br>
+                    przechowywany przezeń adres URL.<br>
+                    1. window.location.href przechowuje pełny adres<br>
+                    2. window.location.hostname wyłącznie domenę. <br>
+                    3. window.location.reload()  odświeża stronę,<br>
+                    4. window.location.assign()  przechodzi na podany adres,<br>
+                    5. window.location.replace()  przechodzi na podany adres i nie tworzy nowego wpisu w <br>
+                    historii przeglądania.                </p>
+            </li>
+            <h3>Różnica między assign a repleace</h3>
+            <li type="square">
+                <p>
+                    W przeciwieństwie do metody assign, po zastosowaniu replace bieżąca strona nie zostanie zapisana <br>
+                    w historii przeglądanych witryn, nie będzie więc można się do niej ponownie odwołać poprzez <br>
+                    wciśnięcie przycisku Wstecz bądź też wywołanie history.go(-1).<br>
+                    Tę metodę można wykorzystać np. w sytuacji, kiedy witryna została przeniesiona pod inny adres, a <br>
+                    pod starym ma być umieszczona stosowna informacja oraz automatyczne przekierowanie <br>
+                    użytkownika (po zadanym czasie).                 
+                </p>
+            </li>
+        </ul>
+    </body>
+</html>
