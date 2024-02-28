@@ -1,0 +1,41 @@
+<DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+        </title>
+        <style>
+            #par1
+            {
+                color:green;
+                font-size:1.5cm;
+            }
+            #hh2
+            {
+                color:red;
+            }
+            #hh1
+            {
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p  id="par1">MENU</p><br>
+            <h1  id="hh2">1 - COLOR CZERWONY</h1><br>
+            <h1  id="hh1">2 - COLOR NIEBIESKI</h1><br><br>
+            <input type="button", value="oblicz", onclick="ready()"></button>
+            <script language="JavaScript">
+                function ready(){
+                    let x = prompt("wprowadz x", "")
+                    let a =  x.toLowerCase();
+                    if (a == 1 || a == "czerwony") { document.write("<h7 style='color:red;'>" + "wczytales kolor czerwony" + "<br>"); }
+                    if (a == 2 || a == "niebieski") { document.write("<h1 style='color:blue;'>" + "wczytales kolor niebieski" + "<br>"); }
+                    if (a < 0) { document.write("czytana liczba jest mniejsza od 0" + "<br>"); }
+                }
+            </script>
+        </div>
+    </body>
+</html>
