@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+<body>
+    <div id="iv"></div>
+    <script>
+        const Array = [['https://plus.unsplash.com/premium_photo-1674048385298-4313764a25f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D', 'https://images.unsplash.com/file-1707885205802-88dd96a21c72image?dpr=2&w=416&auto=format&fit=crop&q=60', 'https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D'],['https://images.unsplash.com/photo-1467646208740-18124b37eb58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D', 'https://images.unsplash.com/photo-1604128311556-816dfb846a54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D', 'https://images.unsplash.com/photo-1515281239448-2abe329fe5e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D'],['https://images.unsplash.com/photo-1581878611345-3fe425a0f833?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D', 'https://plus.unsplash.com/premium_photo-1661342448000-1d7389256dde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D', 'https://images.unsplash.com/photo-1619560820102-31f5b04c049a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29sbGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D'],];
+        let R = 0, C = 0;
+        function Next(){
+            const Image = document.createElement('img');
+            Image.src = Array[R][C];
+            document.getElementById('iv').innerHTML = '';
+            document.getElementById('iv').appendChild(Image);
+            C = (C + 1) % Array[R].length;
+            if (C === 0) {R = (R + 1) % Array.length;}
+			setTimeout(Next, 2000);}
+        Next();
+    </script>
+</body>
+</html>
