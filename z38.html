@@ -1,0 +1,30 @@
+<DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+        </title>
+        <style>
+            #par1
+            {
+                color:green;
+                font-size:1cm;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p  id="par1"> sprawdzenie liczby - parzysta/nieparzysta </p><br>
+            <input type="button", value="oblicz", onclick="ready()"></button>
+            <script language="JavaScript">
+                function ready(){
+                    let x = prompt("wprowadz liczbe", "")
+                    let a =  x.toLowerCase();
+                    if (a % 2 == 1) { document.write("<h5 style='color:silver;'>" + "liczba nieparzysta" + "<br>"); 
+                    }else if (a % 2 == 0) { document.write("<h3 style='color:red;'>" + "liczba parzysta" + "<br>"); }
+                }
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <script>
+            var a_dyl = prompt("Podaj szerokość prostokąta a:");
+            var b_dyl = prompt("Podaj wysokość prostokąta b:");
+
+            var gwiazdki_g = "*";
+            for (var i = 1; i < a_dyl; i++) {
+                gwiazdki_g += "*";
+            }
+
+            var gwiazdki_sr = "*";
+            for (var i = 1; i < a_dyl - 1; i++) {
+                gwiazdki_sr += "&nbsp;&nbsp;";
+            }
+            gwiazdki_sr += "*";
+
+            var gwiazdki_d = "*";
+            for (var i = 1; i < a_dyl; i++) {
+                gwiazdki_d += "*";
+            }
+
+            document.write(gwiazdki_g + "<br>");
+
+            for (var i = 1; i < b_dyl - 1; i++) {
+                document.write(gwiazdki_sr + "<br>");
+            }
+
+            document.write(gwiazdki_d + "<br>");
+
+        </script>
+    </body>
+</html>

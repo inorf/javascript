@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="utf-8">
+ <title>Przykład modyfikacji pętli</title>
+ <script language="JavaScript">
+ function generatePattern() {
+    var repeatCount = prompt("Ile razy powtórzyć wzór?");
+    var initials = prompt("Podaj swoje inicjały:");
+    
+    for (var i = 1; i <= repeatCount; i++) {
+        for (var k = 1; k <= i; k++) {
+            document.write("&nbsp;&nbsp;");
+        }
+        document.write(i + "_" + initials + "_" + i + "<br>");
+    }
+ }
+ </script>
+</head>
+<body>
+<button onclick="generatePattern()">Generuj wzór</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- metatagi -->
+<head>
+<script type="text/javascript">
+function wyswietlDate(){
+ var Today = new Date();
+ var Month = (Today.getMonth()+1);
+ var Day = Today.getDate();
+ var Year = Today.getFullYear();
+ if(Year <= 99) Year += 1900
+ return Day + "-" + Month + "-" + Year;
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+    document.write("Dmitry Dylevich dzisiejsza data:" + wyswietlDate());
+    document.write("<p>Przeglądarka: " + navigator.appName + "</p>");
+    document.write("<p>Wersja przeglądarki: " + navigator.appVersion + "</p>");
+    document.write("<p>Wszystkie dane przeglądarki: " + navigator.userAgent + "</p>");
+    document.write("<p>System operacyjny: " + navigator.platform + "</p>");
+    document.write("<p>Przeglądarka pracuje w trybie online:"+navigator.onLine);
+    document.write("<p>Obsługa Java:"+navigator.javaEnabled());
+ </script>
+</body>
+</html>
+	
