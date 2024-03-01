@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <label for="rows">Wiersze:</label>
+            <input type="number" id="rows" min="1" value="3">
+            <label for="columns">Kolumny:</label>
+            <input type="number" id="columns" min="1" value="3">
+            <button onclick="createTable()">Twórz tabelę!</button>
+        </div>
+        <div id="odpTable"></div>
+        <div>
+            <button onclick="calculateccc()">Oblicz wyznacznik</button>
+            <p id="cccResult"></p>
+        </div>
+        <script>
+        function createTable() {
+            var rows = parseInt(document.getElementById("rows").value);
+            var columns = parseInt(document.getElementById("columns").value);
+            var tableHTML = "<table>";
+            for (var i = 0; i < rows; i++) {
+                tableHTML += "<tr>";
+                for (var j = 0; j < columns; j++) {
+                    tableHTML += "<td><input type='text' id='cell_" + i + "_" + j + "'><button onclick='incrementValue(\"cell_" + i + "_" + j + "\")'>+</button><button onclick='decrementValue(\"cell_" + i + "_" + j + "\")'>-</button></td>";
+                }
+                tableHTML += "</tr>";
+            }
+            tableHTML += "</table>";
+            document.getElementById("odpTable").innerHTML = tableHTML;
+        }
+        function incrementValue(id) {
+            var element = document.getElementById(id);
+            var value = parseFloat(element.value);
+            if (!isNaN(value)) {
+                element.value = value + 1;
+            } else {
+                element.value = 1;
+            }
+        }
+        function decrementValue(id) {
+            var element = document.getElementById(id);
+            var value = parseFloat(element.value);
+            if (!isNaN(value) && value > 0) {
+                element.value = value - 1;
+            } else {
+                element.value = 0
+            }
+        }
+        function calculateccc() {
+            var odp = [];
+            var rows = parseInt(document.getElementById("rows").value);
+            var columns = parseInt(document.getElementById("columns").value);
+            for (var i = 0; i < rows; i++) {
+                odp[i] = [];
+                for (var j = 0; j < columns; j++) {
+                    odp[i][j] = parseFloat(document.getElementById("cell_" + i + "_" + j).value);
+                }
+            }
+            var ccc = cccSarrus(odp);
+            document.getElementById("cccResult").innerText = "Wyznacznik macierzy: " + ccc;
+        }
+        function cccSarrus(odp) {
+            return (
+                (odp[0][0] * odp[1][1] * odp[2][2]) +
+                (odp[0][1] * odp[1][2] * odp[2][0]) +
+                (odp[0][2] * odp[1][0] * odp[2][1]) -
+                (odp[0][2] * odp[1][1] * odp[2][0]) -
+                (odp[0][0] * odp[1][2] * odp[2][1]) -
+                (odp[0][1] * odp[1][0] * odp[2][2])
+            );
+        }
+        </script>
+    </body>
+</html>
