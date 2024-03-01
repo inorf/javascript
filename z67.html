@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <input type="number" id="a1">* x +<input type="number" id="b1">* y =<input type="number" id="c1">
+        </div>
+        <br>
+        <div>
+            <input type="number" id="a2">* x +<input type="number" id="b2">* y =<input type="number" id="c2">
+        </div>
+        <button onclick="func1()">Oblicz</button>
+        <div id="odpowiedz"></div>
+        <script>
+            function func1() {
+                function increment(id) {
+                const input = document.getElementById(id);
+                input.value = parseFloat(input.value) + 1; 
+            }
+            function bbb(id) {
+                const input = document.getElementById(id);
+                input.value = parseFloat(input.value) - 1; 
+            }
+                const a1 = parseFloat(document.getElementById('a1').value);
+                const b1 = parseFloat(document.getElementById('b1').value);
+                const c1 = parseFloat(document.getElementById('c1').value);
+                const a2 = parseFloat(document.getElementById('a2').value);
+                const b2 = parseFloat(document.getElementById('b2').value);
+                const c2 = parseFloat(document.getElementById('c2').value);
+                if (isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(a2) || isNaN(b2) || isNaN(c2)) {
+                    alert("Proszę wprowadzić wszystkie współczynniki.");
+                    return;
+                }
+                const ccc = a1 * b2 - a2 * b1;
+                if (ccc === 0) {
+                    document.getElementById('odpowiedz').innerHTML = "Układ równań jest sprzeczny lub nieskończony.";
+                } else {
+                    const x = (c1 * b2 - c2 * b1) / ccc;
+                    const y = (a1 * c2 - a2 * c1) / ccc;
+                    document.getElementById('odpowiedz').innerHTML = " X = " + x + "<br>" + " Y = " + y;
+                }
+            }
+        </script>
+    </body>
+</html>
