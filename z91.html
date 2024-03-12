@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <script>
+            function spr(){
+                let pass = this.password.value;
+                let nick = this.nickname.value;
+                if( pass.toLowerCase()== 'dzmitry' && nick == 'dylevich')
+                {
+                    window.location.href = 'index.html'; 
+                    this.nickname.value = '';  
+                    this.password.value = '';
+                    return false;
+                }
+            }
+        </script>
+        <form action="?" onsubmit="let pass = this.password.value;if( pass.toLowerCase()== 'dzmitry' && this.nickname.value == 'dylevich'){window.location.href = 'index.html'; this.nickname.value = ''; this.password.value = ''; return false;}">
+            <input type="text" name="nickname"/><br>
+            <input type="password" name="password"/><br>
+            <input type="submit" value="OK" />
+        </form>
+    </body>
+</html>
