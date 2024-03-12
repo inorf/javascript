@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>JavaScript - Data i czas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h2>Wyświetlam bieżącą datę i czas</h2>
+        <p>
+            <script type="text/javascript"> 
+                data_n = new Date();
+                data_l = data_n.toString();
+                data_u = data_n.toGMTString();
+                data_r = data_n.toLocaleString();
+                document.write("<b>Czas lokalny:</b> " + data_l + "<br>");
+                document.write("<b>Czas uniwersalny:</b> " + data_u + "<br>");
+                document.write("<b>Czas regionalny:</b> " + data_r + "<br>");
+            </script>
+        </p>
+    </body>
+</html>
