@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <p id="par">
+            CONCAT() method:<br>
+        </p>
+        <script>
+            let paragr = document.getElementById("par");
+
+            let arr1 = ['a', 'c', 'e'];
+            let arr2 = ["b", 'd', 'f'];
+            paragr.innerHTML += arr1;
+            paragr.innerHTML += '<br>';
+            paragr.innerHTML += arr2;
+            paragr.innerHTML += '<br> after concat(): <br>';
+            let arr3 = arr1.concat(arr2);
+            paragr.innerHTML += arr3;
+            paragr.innerHTML += '<br><br>';
+
+            paragr.innerHTML += 'POP() method:<br>';
+            let arr4 = ['auto', 'zug', 'bus', 'fahrrad'];
+            paragr.innerHTML += arr4;
+            paragr.innerHTML += '<br>';
+            paragr.innerHTML += 'after pop(): <br>';
+            arr4.pop();
+            paragr.innerHTML += arr4;
+        </script>
+    </body>
+</html>
