@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <script>
+            function abc(){
+                pokaz1.innerHTML = document.lastModified;
+            }
+            function abcd(){
+                dzis = new Date();
+                let options = {timeZone: 'Europe/Warsaw'};
+                let pl_time = dzis.toLocaleString('pl-PL', options);
+                pokaz2.innerHTML = pl_time;
+            }
+            function abcde(){
+                dzis = new Date();
+                let godzina = dzis.getHours();
+                pokaz3.innerHTML = "godzina: "+godzina;
+            }
+        </script>
+        <table>
+            <tr>
+                <td>
+                    <a onclick="abc()"><img src="obraz1.gif" alt="Tekst alternatywny" border="0" onmouseover="this.src = '200.webp'" onmouseout="this.src = 'obraz1.gif'" /></a>
+                </td>
+                <td>
+                    <a onclick="abcd()"><img src="obraz1.gif" alt="Tekst alternatywny" border="0" onmouseover="this.src = '200.webp'" onmouseout="this.src = 'obraz1.gif'" /></a>
+                </td>
+                <td>
+                    <a onclick="abcde()"><img src="obraz1.gif" alt="Tekst alternatywny" border="0" onmouseover="this.src = '200.webp'" onmouseout="this.src = 'obraz1.gif'" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td id="pokaz1">
+                    
+                </td>
+                <td id="pokaz2">
+                    
+                </td>
+                <td id="pokaz3">
+                    
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
