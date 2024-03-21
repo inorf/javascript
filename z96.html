@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+        ul, li{
+            display: contents;
+            color: green;
+            font-size: 0.7cm;
+        }
+    </style>
+ <script language="JavaScript">
+ function pushbutton() {
+ alert("Czesc !");}
+ </script>
+</head>
+<body><p style="font-size:2cm;color: red;">Dylevich</p>
+    <ul>
+        <li>dzis = new Date() -- Ta linia tworzy nowy obiekt Date, który zawiera aktualną datę i czas.</li><br>
+        <li>dzis.getHours() -- Ta linia zwraca godzinę aktualnej daty i czasu.</li><br>
+        <li>dzis.getMinutes() -- Ta linia zwraca minuty aktualnej daty i czasu.</li><br>
+        <li>dzis.getMonth()+1 -- Ta linia zwraca miesiąc aktualnej daty. +1 przenosi styczeń z 0 indexu na 1, i tak ze wszystkimi.</li><br>
+        <li>dzis.getDate() -- Ta linia zwraca dzień miesiąca aktualnej daty.</li><br>
+        <li>dzis.getFullYear() -- Ta linia zwraca rok aktualnej daty.</li><br><br>
+    </ul>
+ Ostatnio zmodyfikowany: 
+<script language="LiveScript">
+ document.write(document.lastModified,"<br>")
+</script>
+<form>
+ <input type="button" name="Button1" value="Naciśnij mnie" onclick="pushbutton()">
+</form>
+<script language="JavaScript">
+ dzis = new Date()
+ document.write("<br>Aktualny czas : ",dzis.getHours(),":",dzis.getMinutes())
+ document.write("<br>Aktualna data : ",dzis.getMonth()+1,",",dzis.getDate(),",",dzis.getFullYear());
+</script>
+</body>
+</html>
