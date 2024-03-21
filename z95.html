@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+    #container {
+        position: relative;
+        text-align: center;
+    }
+    #time-date {
+        font-size: 1.5cm;
+        position: absolute;
+        top: 50%;
+        left: 35%;
+    }
+    img{
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="kalendar.jpg">
+        <div id="time-date">
+            <script type="text/javascript"> 
+                data = new Date();
+                let options = {timeZone: 'Europe/Warsaw'};
+                let pl_time = data.toLocaleString('pl-PL', options);
+                document.write(pl_time);
+            </script>
+        </div>
+    </div>
+</body>
+</html>
