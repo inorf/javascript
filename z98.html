@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            function dylevich_start(){
+                start_kow = new Date();
+                poczatek_kow=start_kow.getTime();
+            }
+            function dylevich_stop(){
+                stop_kow = new Date();
+                koniec_kow=stop_kow.getTime();
+                roznica_kow=koniec_kow-poczatek_kow;
+                pokaz1.innerHTML += roznica_kow/1000+"s ";
+            } 
+            dzis_dyl = new Date();
+            document.write("<br>Aktualny czas : ",dzis_dyl.getHours(),":",dzis_dyl.getMinutes());
+        </script>
+        <input type="button" name="Button1" value="START stoper" onclick="dylevich_start()">
+        <input type="button" name="Button2" value="STOP stoper" onclick="dylevich_stop()">
+        <table>
+            <tr id="pokaz1"></tr>
+        </table>
+    </body>
+</html>
