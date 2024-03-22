@@ -31,6 +31,12 @@
             alert("OK!");
             }
             }
+            function test3(form){
+                if(form.txt3.length != 11){
+                    alert("niepoprawno");
+                    form.txt3.value = "";
+                }
+            }
         </script>
     </head>
     <body onLoad="setfocus()">
@@ -52,9 +58,9 @@
         <form name="nip">
             Wpisz numer  nip:<br>
             <input type="text" name="txt4">
-            <input type="button" name="button3" value="Test" onClick="test4(this.form)">
+            <input type="button" name="button4" value="Test" onClick="test4(this.form)">
         </form>    
-        <form method=post action="mailto:dowolny@mail.pl">
+        <form method=post action="mailto:alex007beliy@mail.pl">
             <h3>Czy podoba Ci się ta strona ?</h3>
             <input name="choice" type="radio" value="1">Tak<BR>
             <input name="choice" type="radio" value="2" checked>Może być<BR>
