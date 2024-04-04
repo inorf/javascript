@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8" lang="pl-PL">
+        <style>
+            body{
+                background-image: url(kalendarz.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 40%;
+
+                height: 98%;
+                width: 99%;
+                
+                display: flex;
+                align-items: center;
+                font-size: 200%;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <script>
+                data = new Date();
+                let options = {timeZone: 'Europe/Warsaw'};
+                let pl_time = data.toLocaleString('pl-PL', options);
+                document.write(pl_time);
+            </script>
+        </center>
+    </body>
+</html>
