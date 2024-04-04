@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title> Zadanie 83-nazwisko ucznia </title>
+ <script language="JavaScript">
+    function dni_dylevich(dzien,miesiac,rok) // function dni_kowalski(dzien,miesiac,rok)
+     {
+    var d_liczba=parseFloat(dzien) // zamiana tekstu na liczbę, tekst który był parametrem funkcji
+    var m_liczba=parseFloat(miesiac)
+    var r_liczba=parseFloat(rok)
+    var dzis=new Date(); // utworzenie obiektu z dzisiejszą datą
+var urodziny=new Date(r_liczba,m_liczba-1,d_liczba);
+// utworzenie obiektu z datą urodzin użytkownika
+// m_liczba-1 musi być -1 bo komputer styczeń=0
+var czyRok; // zmienne pomocnicze
+var czyMiesiac;
+var czyDzien;
+ilosc_wynik=Math.floor((dzis-urodziny)/(3600000*24));
+// Math.floor- metoda matematyczna zaokrąglająca
+// różnica (dzis- urodziny) podaje wynik w milisekundach
+// musisz przeliczyć na dni, zapisz w miejsce znaków zapytania.
+document.getElementsByName('ilosc')[0].value=ilosc_wynik;
+// wyprowadzanie do okienka formularza
+alert('ilosc: ' + ilosc_wynik);
+// wyprowadzanie do okienka alert
+var pokaz2 = document.getElementById('pokaz2');
+var pokaz1 = document.getElementById('pokaz1');
+pokaz1.innerHTML="Ilość dni="+ilosc_wynik+" dni"+"<br>";
+// wyprowadzenie do tabeli
+czyRok = dzis.getFullYear();
+czyMiesiac = dzis.getMonth();
+czyDzien = dzis.getDate();
+// przypisanie dzisiejszej daty do zmiennych
+// teraz sprawdzanie warunków czy masz więcej czy mniej niż 18 lat
+if ((czyRok==(r_liczba+18))&&(czyMiesiac==(m_liczba-1))&&(czyDzien==d_liczba))
+{
+pokaz2.innerHTML="Masz dziś 18 urodziny!";
+}
+if (czyRok<(r_liczba+18))
+{
+pokaz2.innerHTML="Nie masz jeszcze 18 lat!";
+}
+if ((czyRok==(r_liczba+18))&&(czyMiesiac<(m_liczba-1)))
+{
+pokaz2.innerHTML="Masz już 18 lat!";
+}
+if ((czyRok==(r_liczba+18))&&(czyMiesiac==(m_liczba-1))&&(czyDzien<d_liczba))
+{
+pokaz2.innerHTML="Masz już 18 lat!";
+}
+if (czyRok>(r_liczba+18))
+{
+pokaz2.innerHTML="Masz już 18 lat!";
+}
+if ((czyRok==(r_liczba+18))&&(czyMiesiac>(m_liczba-1)))
+{
+pokaz2.innerHTML="Nie masz jeszcze 18 lat!";
+110
+}
+if ((czyRok==(r_liczba+18))&&(czyMiesiac==(m_liczba-1))&&(czyDzien>d_liczba))
+{
+pokaz2.innerHTML="Nie masz jeszcze 18 lat!";
+}
+}
+</script>
+
+ </head>
+<body>
+    <form name="formularz" onsubmit="dni_dylevich(this.dzien.value,this.miesiac.value,this.rok.value);return false">
+        Podaj dzień=
+        <input size="6" name="dzien">
+        Podaj miesiąc=
+        <input size="6" name="miesiac">
+        Tutaj miesiąc i rok
+        <input size="6" name="rok">
+        <br>
+        <br>
+        <input TYPE="submit" Value="oblicz" >
+        <br>
+        <br>
+        Ilość dni=
+        <input size="6" name="ilosc">
+        </form>
+        <p id="pokaz1"></p>
+        <p id="pokaz2"></p>
+ </body>
+</html>
