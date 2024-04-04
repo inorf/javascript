@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>
+            Przykład ->pokaz formularza
+        </title>
+        <script language="JavaScript">
+            function setfocus()
+            {
+            document.jeden.txt1.focus(); return;
+            }
+            function test1(form)
+            {
+            if (form.txt1.value == "")
+            {
+            alert("Podaj ciąg znaków!")
+            }
+            let xgg = document.getElementsByName("txt1");
+            if(xgg.length < 5){
+            alert("niepoprawno");
+            }
+            }
+            115
+            function test2(form)
+            {
+            if (form.txt2.value == "" || form.txt2.value.indexOf('@', 0) == -1)
+            {
+            alert("Niepoprawny adres poczty elektronicznej!");
+            }
+            else
+            {
+            alert("OK!");
+            }
+            }
+        </script>
+    </head>
+    <body onLoad="setfocus()">
+        <form name="jeden">
+            Wpisz swoje nazwisko:<br>
+            <input type="text" name="txt1">
+            <input type="button" name="button1" value="Test" onClick="test1(this.form)">
+        </form>
+        <form name="dwa">
+            Wpisz adres swojej poczty elektronicznej:<br>
+            <input type="email" name="txt2">
+            <input type="button" name="button2" value="Test" onClick="test2(this.form)">
+        </form>
+        <form method=post action="mailto:dowolny@mail.pl">
+            <h3>Czy podoba Ci się ta strona ?</h3>
+            <input name="choice" type="radio" value="1">Tak<BR>
+            <input name="choice" type="radio" value="2" checked>Może być<BR>
+            <input name="choice" type="radio" value="3">Badziewie!<BR>
+            <input name="submit" type="submit" value="Wyślij odpowiedź">
+        </form>
+    </body>
+</html>
