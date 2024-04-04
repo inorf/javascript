@@ -1,49 +1,60 @@
 <html>
     <body>
-        <script>
-            function obliczanie() {
-                let piwo = document.getElementById("piwo").value;
-                let wino = document.getElementById("wino").value;
-                let wodka = document.getElementById("wodka").value;
-                let godziny = document.getElementById("godziny").value;
+        <div style="text-align: center;">
+            <script>
+                function obliczanie() {
+                    let piwo = parseInt(document.getElementById("piwo").value);
+                    let wino = parseInt(document.getElementById("wino").value);
+                    let wodka = parseInt(document.getElementById("wodka").value);
+                    let godziny = parseInt(document.getElementById("godziny").value);
+                    let coef = 0;
 
-                if(document.getElementById("kobieta").checked){
-                    let coef = 0.7;
-                }
-                if(document.getElementById("mezczyzna").checked){
-                    let coef = 0.6;
-                }
-                let waga = document.getElementById("waga").value;   
-                if(document.getElementById("pusty").checked){
+                    if (document.getElementById("kobieta").checked) {
+                        coef = 0.7;
+                    }
+                    if (document.getElementById("mezczyzna").checked) {
+                        coef = 0.6;
+                    }
+            
+                    let waga = parseInt(document.getElementById("waga").value);
                     let zoladek = 0;
+
+                    if (document.getElementById("pusty").checked) {
+                        zoladek = 0;
+                    }
+                    if (document.getElementById("sredni").checked) {
+                        zoladek = 1;
+                    }
+                    if (document.getElementById("pelny").checked) {
+                        zoladek = 2;
+                    }
+
+                    let promile = ((piwo * 0.05 * 0.789) + (wino * 0.12 * 0.789) + (wodka * 0.4 * 0.789)) / (waga * coef) - (0.015 * godziny) - (zoladek * 0.1);
+                    
+                    document.getElementById("wynik").innerHTML = "Twoje promile: " + promile.toFixed(2);
                 }
-                if(document.getElementById("sredni").checked){
-                    let zoladek = 1;
-                }
-                if(document.getElementById("pelny").checked){
-                    let zoladek = 2;
-                }
-           }
-        </script>
+            </script>        
 
-        <center>
-            <h2>
-                AlkoCar
-            </h2>
-        </center>
+            <center>
+                <h2>
+                    AlkoCar
+                </h2>
+            </center>
 
-        <p>Spozylem <input id="piwo" type="number">ml piwa</p>
-        <p>Spozylem <input id="wino" type="number">ml wina</p>
-        <p>Spozylem <input id="wodka" type="number">ml wodki</p>
+            <p>Spozylem <input id="piwo" type="number">ml piwa</p>
+            <p>Spozylem <input id="wino" type="number">ml wina</p>
+            <p>Spozylem <input id="wodka" type="number">ml wodki</p>
 
-        <p>Ile godzin temu spozywales trunki? <input type="text"></p>
+            <p>Ile godzin temu spozywales trunki? <input type="number" id="godziny"></p>
 
-        <p>okresl swoja plec: <input id="kobieta" type="radio"><label for="kobieta">kobieta </label></input> <input id="mezczyzna" type="radio"><label for="mezczyzna">mezczyzna</label></input></p>
+            <p>okresl swoja plec: <input id="kobieta" type="radio"><label for="kobieta">kobieta </label></input> <input id="mezczyzna" type="radio"><label for="mezczyzna">mezczyzna</label></input></p>
 
-        <p>okresl swoja wage w kg: <input type="number"></p>
+            <p>okresl swoja wage w kg: <input type="number" id="waga"></p>
 
-        <p>piles na pusty czy pelny zoladek? <input id="pusty" type="radio"><label for="pusty">pusty </label></input> <input id="sredni" type="radio"><label for="sredni">sredni </label></input> <input id="pelny" type="radio"><label for="pelny">pelny</label></input></p><br>
+            <p>piles na pusty czy pelny zoladek? <input id="pusty" type="radio"><label for="pusty">pusty </label></input> <input id="sredni" type="radio"><label for="sredni">sredni </label></input> <input id="pelny" type="radio"><label for="pelny">pelny</label></input></p><br>
 
-        <input type="button" id="knopka" value="oblicz" onclick="obliczanie()">
+            <input type="button" id="knopka" value="oblicz" onclick="obliczanie()">
+            <div id="wynik" style="padding: 5%;"></div>
+        </div>
     </body>
 </html>
