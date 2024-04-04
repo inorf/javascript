@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function obliczanie(dane) {
+            wynik.innerHTML = " ";
+            cena_koncowa = 0;
+            if (dane.wybor[0].checked) {
+                cena_koncowa = parseFloat(dane.cena.value);
+                120
+            }
+            if (dane.wybor[1].checked) {
+                cena_koncowa = 0.9 * parseFloat(dane.cena.value);
+            }
+            if (dane.wybor[2].checked) {
+                cena_koncowa = 0.8 * parseFloat(dane.cena.value);
+            }
+            if (dane.vat.selectedIndex == 0) {
+                cena_koncowa = cena_koncowa;
+            }
+            if (dane.vat.selectedIndex == 1) {
+                cena_koncowa = 1.07 * cena_koncowa;
+            }
+            if (dane.vat.selectedIndex == 2) {
+                cena_koncowa = 1.23 * cena_koncowa;
+            }
+            if (dane.ubezpieczenie.checked == true) {
+                cena_koncowa = 1.15 * cena_koncowa;
+            }
+            if (dane.gwarancja.checked == true) {
+                cena_koncowa = 1.28 * cena_koncowa;
+            }
+            wynik.innerHTML = "do zapłaty " + cena_koncowa.toFixed(2) + " zł";
+        }
+    </script>
+</head>
+
+<body>
+    <form name="formularz">
+        <b>Podaj cenę:</b><br>
+        cena netto<input type="text" name="cena" /><br><br>
+        <b>Podaj rabat:</b><br>
+        rabat 0% <input type="radio" name="wybor" value=0 /><br><br>
+        rabat 10% <input type="radio" name="wybor" value=10 /><br><br>
+        rabat 20% <input type="radio" name="wybor" value=20 /><br><br>
+        <b>Podaj VAT:</b><br>
+        wybierz VAT<select name="vat" />
+        <option value="0"> 0%
+        <option value="7"> 7%
+        <option value="23"> 23%
+            </select><br><br>
+            <b>Podaj opcje dodatkowe:</b><br>
+            ubezpieczenie zakup &nbsp&nbsp&nbsp15%<input type="checkbox" name="ubezpieczenie" value=0 /><br>
+            przedłużona gwarancja 28%<input type="checkbox" name="gwarancja" value=0 /><br><br>
+            <!-- <input type="button" value="Oblicz....." onClick="obliczanie(this.form)"/><br><br> -->
+            121
+            <input type="button" value="Oblicz....." onClick="obliczanie(this.form)" /><br><br>
+    </form>
+    <table>
+        <tr id="wynik"></tr>
+    </table>
+</body>
+
+</html>
