@@ -1,5 +1,69 @@
 <html>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            input{
+                margin:3%;
+                background-color: rgb(156, 76, 76);
+                color: azure;
+                border-radius: 5px;
+                padding: 1%;
+            }
+            td{
+                border: 1px solid black;
+            }
+            a{
+                color: azure;
+                padding: 1%;
+            }
+            #ff{
+                padding:4%;
+            }
+        </style>
+    </head>
+
     <body>
-        
+        <div style="text-align: center; margin-left: 20%;margin-top: 5%;">
+            <script>
+                function przod() { history.forward(); }
+                function wstecz() { history.back(); }
+                function odsw() { location.reload(); }
+                function druk() { window.print(); }
+            </script>
+            <table style="border-spacing: 0px; width: 75%; height: 70%;">
+                <tr>
+                    <td style="background-color: antiquewhite;border-radius: 10px;height: 90%;">
+                        <center>
+                            <h1>Menu</h1><br>
+                            <a href="https://zse.edu.gdansk.pl/" target="Str"><input type="button" id="ff" value=" ZSE "></a><br>
+                            <a href="https://virtualvacation.us/" target="Str"><input type="button" id="ff" value=" virtualvacation "></a><br>
+                            <a href="https://digitaldefynd.com/" target="Str"><input type="button" id="ff" value=" digitaldefynd "></a><br>
+                        </center>
+                    </td>
+                    <td style="border-radius: 10px;background-color: antiquewhite;">
+                        <iframe style="border-radius: 10px; width: 100%; height: 100%;" name="Str"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="border-radius: 10px;background-color: antiquewhite;height: 10%;">
+                        <center>
+                            <input type="button" onclick="przod()" value="strona do przodu">
+                            <input type="button" onclick="druk()" value="drukuj stronę">
+                            <input type="button" onclick="wstecz()" value="wstecz strona">
+                            <input type="button" onclick="odsw()" value="odśwież stronę">
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </body>
+
+    </html>
+</body>
+
 </html>
