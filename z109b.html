@@ -1,0 +1,49 @@
+<html>
+    <body></body>
+    <script>function getCurrentTimeInWords() {
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
+        const minutes = currentTime.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        
+        const hourWords = [
+            "twelve", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"
+        ];
+    
+        const minuteWords = [
+            "o'clock", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", 
+            "ten", "eleven", "twelve", "thirteen", "fourteen", "quarter", "sixteen", "seventeen", "eighteen", "nineteen", 
+            "twenty", "twenty one", "twenty two", "twenty three", "twenty four", "twenty five", "twenty six", "twenty seven", 
+            "twenty eight", "twenty nine", "half"
+        ];
+        
+        let hour = hours % 12;
+        if (hour === 0) hour = 12; // Handle midnight
+        
+        let timeInWords = '';
+    
+        if (minutes === 0) {
+            timeInWords = `${hourWords[hour]} ${minuteWords[0]}`;
+        } else if (minutes <= 30) {
+            if (minutes === 15 || minutes === 30) {
+                timeInWords = `${minuteWords[minutes]} past ${hourWords[hour]}`;
+            } else if (minutes === 1) {
+                timeInWords = `${minuteWords[minutes]} minute past ${hourWords[hour]}`;
+            } else {
+                timeInWords = `${minuteWords[minutes]} minutes past ${hourWords[hour]}`;
+            }
+        } else {
+            const remainingMinutes = 60 - minutes;
+            if (remainingMinutes === 15) {
+                timeInWords = `${minuteWords[remainingMinutes]} to ${hourWords[hour % 12 + 1]}`;
+            } else if (remainingMinutes === 1) {
+                timeInWords = `${minuteWords[remainingMinutes]} minute to ${hourWords[hour % 12 + 1]}`;
+            } else {
+                timeInWords = `${minuteWords[remainingMinutes]} minutes to ${hourWords[hour % 12 + 1]}`;
+            }
+        }
+        
+        return `${timeInWords} ${ampm}`;
+    }
+document.write(getCurrentTimeInWords());
+</script></html>

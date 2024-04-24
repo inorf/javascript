@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Bookmark</title>
+</head>
+<body>
+    <p>Click the button below to add this page to your bookmarks:</p>
+    <button id="bookmarkButton">Add Bookmark</button>
+
+    <script>
+        document.getElementById('bookmarkButton').addEventListener('click', function() {
+    var pageTitle = document.title;
+    var pageURL = window.location.href;
+    addBookmark(pageTitle, pageURL);
+});
+
+function addBookmark(title, url) {
+    if (window.sidebar && window.sidebar.addPanel) { // Firefox
+        window.sidebar.addPanel(title, url, '');
+    } else if (window.external && ('AddFavorite' in window.external)) { // Internet Explorer
+        window.external.AddFavorite(url, title);
+    } else if (window.opera && window.print) { // Opera
+        var elem = document.createElement('a');
+        elem.setAttribute('href', url);
+        elem.setAttribute('title', title);
+        elem.setAttribute('rel', 'sidebar');
+        elem.click();
+    } else { // Other browsers
+        alert("Your browser doesn't support this feature. Please use Ctrl+D to add a bookmark manually.");
+    }
+}
+
+    </script>
+</body>
+</html>

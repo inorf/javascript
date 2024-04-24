@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container {
+    text-align: center;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 180px;
+    margin: auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.message {
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+        <div class="container">
+            <h1>Tic Tac Toe</h1>
+            <div id="board" class="board">
+                <div class="cell" onclick="playerMove(0)"></div>
+                <div class="cell" onclick="playerMove(1)"></div>
+                <div class="cell" onclick="playerMove(2)"></div>
+                <div class="cell" onclick="playerMove(3)"></div>
+                <div class="cell" onclick="playerMove(4)"></div>
+                <div class="cell" onclick="playerMove(5)"></div>
+                <div class="cell" onclick="playerMove(6)"></div>
+                <div class="cell" onclick="playerMove(7)"></div>
+                <div class="cell" onclick="playerMove(8)"></div>
+            </div>
+            <div id="message" class="message"></div>
+            <button onclick="resetGame()">Reset</button>
+        </div> 
+        <script>let currentPlayer = 'X';
+            let board = ['', '', '', '', '', '', '', '', ''];
+            let gameActive = true;
+            
+            const WINNING_COMBINATIONS = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+            
+            function checkWin(player) {
+                return WINNING_COMBINATIONS.some(combination => {
+                    return combination.every(index => board[index] === player);
+                });
+            }
+            
+            function checkDraw() {
+                return board.every(cell => cell !== '');
+            }
+            
+            function evaluate(board) {
+                if (checkWin('X')) return -1;
+                if (checkWin('O')) return 1;
+                if (checkDraw()) return 0;
+                return null;
+            }
+            
+            function minimax(board, depth, isMaximizing) {
+                const result = evaluate(board);
+            
+                if (result !== null) {
+                    return result;
+                }
+            
+                if (isMaximizing) {
+                    let bestScore = -Infinity;
+                    for (let i = 0; i < board.length; i++) {
+                        if (board[i] === '') {
+                            board[i] = 'O';
+                            const score = minimax(board, depth + 1, false);
+                            board[i] = '';
+                            bestScore = Math.max(score, bestScore);
+                        }
+                    }
+                    return bestScore;
+                } else {
+                    let bestScore = Infinity;
+                    for (let i = 0; i < board.length; i++) {
+                        if (board[i] === '') {
+                            board[i] = 'X';
+                            const score = minimax(board, depth + 1, true);
+                            board[i] = '';
+                            bestScore = Math.min(score, bestScore);
+                        }
+                    }
+                    return bestScore;
+                }
+            }
+            
+            function bestMove() {
+                let bestScore = -Infinity;
+                let move;
+            
+                for (let i = 0; i < board.length; i++) {
+                    if (board[i] === '') {
+                        board[i] = 'O';
+                        const score = minimax(board, 0, false);
+                        board[i] = '';
+                        if (score > bestScore) {
+                            bestScore = score;
+                            move = i;
+                        }
+                    }
+                }
+            
+                return move;
+            }
+            
+            function displayMessage(message) {
+                const messageElement = document.getElementById('message');
+                messageElement.textContent = message;
+            }
+            
+            function playerMove(cellIndex) {
+                if (!gameActive || board[cellIndex] !== '') return;
+            
+                board[cellIndex] = currentPlayer;
+                document.getElementsByClassName('cell')[cellIndex].textContent = currentPlayer;
+            
+                if (checkWin(currentPlayer)) {
+                    displayMessage(`Player ${currentPlayer} wins!`);
+                    gameActive = false;
+                } else if (checkDraw()) {
+                    displayMessage("It's a draw!");
+                    gameActive = false;
+                } else {
+                    currentPlayer = 'O';
+                    const botMoveIndex = bestMove();
+                    board[botMoveIndex] = currentPlayer;
+                    document.getElementsByClassName('cell')[botMoveIndex].textContent = currentPlayer;
+                    
+                    if (checkWin(currentPlayer)) {
+                        displayMessage(`Player ${currentPlayer} wins!`);
+                        gameActive = false;
+                    } else if (checkDraw()) {
+                        displayMessage("It's a draw!");
+                        gameActive = false;
+                    } else {
+                        currentPlayer = 'X';
+                    }
+                }
+            }
+            
+            function resetGame() {
+                currentPlayer = 'X';
+                board = ['', '', '', '', '', '', '', '', ''];
+                gameActive = true;
+                const cells = document.getElementsByClassName('cell');
+                for (let cell of cells) {
+                    cell.textContent = '';
+                }
+                displayMessage(`Player ${currentPlayer}'s turn`);
+            }
+            
+            displayMessage(`Player ${currentPlayer}'s turn`);
+            </script>
+</body>
+</html>

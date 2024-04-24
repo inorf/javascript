@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Launcher</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .iframe-container {
+            flex: 1;
+            overflow: hidden;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="iframe-container">
+            <iframe id="programFrame" src="" frameborder="0"></iframe>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="openProgram('z109d.html')">Snow</button>
+            <button class="button" onclick="openProgram('z109e.html')">Tic Tac Toe</button>
+            <button class="button" onclick="openProgram('z109b.html')">Clock</button>
+            <button class="button" onclick="openProgram('z109c.html')">Bookmark</button>
+            <button class="button" onclick="openProgram('z109a.html')">Date</button>
+        </div>
+    </div>
+
+    <script>
+        function openProgram(programURL) {
+            const iframe = document.getElementById('programFrame');
+            iframe.src = programURL;
+        }
+    </script>
+</body>
+</html>
