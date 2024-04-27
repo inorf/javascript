@@ -1,0 +1,86 @@
+<html>
+    <body onload="rysuj()">
+        <script type="text/javascript">
+            function rysuj() {
+                var rysowanie = document.getElementById('obrazek');
+                var rodzaj = rysowanie.getContext('2d');
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(135,110,250,150);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+                
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(365,110,250,150);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+
+
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(110,135,150,250);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+                
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(110,365,150,250);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+                
+
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(135,390,250,350);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+                
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(365,390,250,350);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+
+                                
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(385,140,350,250);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+
+                rodzaj.beginPath();
+                rodzaj.moveTo(250,250);
+                rodzaj.quadraticCurveTo(385,365,350,250);
+                rodzaj.strokeStyle = "green";
+                rodzaj.fillStyle = "green";
+                rodzaj.fill();
+                rodzaj.stroke();
+                rodzaj.closePath();
+            }
+        </script>
+        <canvas id="obrazek" width="600" height="600">
+        </canvas>
+    </body>
+</html>

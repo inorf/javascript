@@ -1,0 +1,45 @@
+<html>
+    <body onload="рисуй()">
+        <script type="text/javascript">
+            function рисуй() {
+                var рисование = document.getElementById('obrazek');
+                var тип = рисование.getContext('2d');
+                тип.beginPath();
+                тип.arc(2_0_0,5_0,3_0,Math.PI,3.14,false);
+                тип.lineWidth = 5;
+                тип.stroke();
+                тип.closePath();
+
+                тип.beginPath();
+                тип.arc(235,80,30,Math.PI,3.14,false);
+                тип.lineWidth = 5;
+                тип.strokeStyle = "black";
+                тип.stroke();
+                тип.closePath();
+
+                тип.beginPath();
+                тип.arc(270,50,3_0,Math.PI,3.14,false);
+                тип.lineWidth = 5;
+                тип.strokeStyle = "black";
+                тип.stroke();
+                тип.closePath();
+
+                тип.beginPath();
+                тип.arc(305,80,30,Math.PI,3.14,false);
+                тип.lineWidth = 5;
+                тип.strokeStyle = "black";
+                тип.stroke();
+                тип.closePath();
+
+                тип.beginPath();
+                тип.arc(340,50,3_0,Math.PI,3.14,false);
+                тип.lineWidth = 5;
+                тип.strokeStyle = "black";
+                тип.stroke();
+                тип.closePath();
+            }
+        </script>
+        <canvas id="obrazek" width="600" height="600">
+        </canvas>
+    </body>
+</html>

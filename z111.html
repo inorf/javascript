@@ -1,0 +1,25 @@
+<html>
+    <body onload="rysuj()">
+        <script type="text/javascript">
+            function rysuj() {
+                var rysowanie = document.getElementById('obrazek');
+                var rodzaj = rysowanie.getContext('2d');
+                rodzaj.fillStyle = 'yellow';
+                rodzaj.fillRect(0, 0, 100, 100);
+                rodzaj.strokeRect(0, 0, 100, 100);
+                rodzaj.fillStyle = 'red';
+                rodzaj.fillRect(30, 30, 30, 30);
+                rodzaj.beginPath();
+                rodzaj.moveTo(330,438);
+                rodzaj.lineTo(380,488);
+                rodzaj.lineTo(430,438);
+                rodzaj.lineTo(380,388);
+                rodzaj.lineTo(330,438);
+                rodzaj.fillStyle = 'green';
+                rodzaj.fill();
+            }
+        </script>
+        <canvas id="obrazek" width="600" height="600">
+        </canvas>
+    </body>
+</html>
